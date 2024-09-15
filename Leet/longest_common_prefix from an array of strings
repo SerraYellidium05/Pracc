@@ -1,0 +1,19 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        Arrays.sort(strs);
+        String s1 = strs[0];
+        String s2 = strs[strs.length-1];
+        int idx = 0;
+        while(idx < s1.length() && idx < s2.length()){
+            if(s1.charAt(idx) == s2.charAt(idx)){
+                idx++;
+            } else {
+                break;
+            }
+        }
+        return s1.substring(0, idx);
+    }
+}
+
+// to calculate the longest common prefix string we use sorting algorithms or array.sort to sort them in order to get the common strings now take the first and last string and compair its letters if matched updated the index value if not return  ""  
+to get the substring use substring method appended to first array from 0 to that updated index's index of the array
