@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+ public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int t = s.nextInt();
+        String [] pair_left = new String[t];
+        String [] pair_right = new String[t];
+        
+        for (int i = 0; i < t; i++) {
+            pair_left[i] = s.next();
+            pair_right[i] = s.next();
+        }
+        Set<List<String>> set = new HashSet<>();// we created a set i.e first list is created then that list is put in set 
+        int i;
+        for(i=0;i<t;i++){
+            List<String> list= Arrays.asList(pair_left[i],pair_right[i]);// here we are converting an array into a list and they have given the names into two seperate arrays we merged those two arrays and converted it into a list 
+            set.add(list);// we added the list to set because set doesn't allow duplicate values and this helps us to count the number of unique elements
+            System.out.println(set.size());
+        }
+        
+
+    }
+}
+// in this question we are given an array of strings where we need to find the unique set at every ith position and print its count value..
