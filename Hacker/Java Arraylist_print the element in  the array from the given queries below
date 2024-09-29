@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       List<List<Integer>> listoflist=new ArrayList<>(); // we created this so that list can be stored in the list
+       Scanner value=new Scanner(System.in);
+       int n=value.nextInt();// no of elements int he big list
+       for(int i=0;i<n;i++){// iteration start
+           int d=value.nextInt();// this is the value which tells how many elements are present in that particular line 
+           List<Integer> list=new ArrayList<>();// created the inner list
+           for(int j=0;j<d;j++){// now we iterate over the d value i.e the no which tells us how many elements are there in the single line . 
+               list.add(value.nextInt());// now we add the elements into the list 
+           }
+           listoflist.add(list);// and put them into the bigger list 
+       }
+       int q=value.nextInt();// now this q tells us the no of queries it contains and with that queries we can get the line and the element we want
+       for(int i=0;i<q;i++){
+       int x=value.nextInt();// the line which we want to go 
+       int y=value.nextInt();// the line which tells us which element index we want
+       try{
+           System.out.println(listoflist.get(x-1).get(y-1));// we do x-1 and y-1 because in java the array index start from 0 
+       }
+       catch(Exception e){
+           System.out.println("ERROR!"); // if no elemnt found print error 
+       }
+    }
+}
+}
