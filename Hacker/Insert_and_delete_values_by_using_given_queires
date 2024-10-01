@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner value=new Scanner(System.in);
+        int n=value.nextInt();
+        List<Integer> a=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            a.add(value.nextInt());
+        }
+        int q=value.nextInt();
+        for(int i=0;i<q;i++){
+            String op=value.next();
+            int x=value.nextInt();
+            if(op.equals("Insert")){
+                int y=value.nextInt();
+                a.add(x,y);// here we take x as index and y as data which needed to be inserted
+                }
+                else{
+                    a.remove(x);// here x tells which index element should be removed
+                    }
+        }
+        for(int values:a){
+            System.out.print(values+" ");         
+        }
+        
+        }
+    }
