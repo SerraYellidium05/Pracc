@@ -1,0 +1,49 @@
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+Given a string s, return true if it is a palindrome, or false otherwise.
+
+
+
+class Solution {
+    public boolean isPalindrome(String s) {
+        int st=0;
+        int en=s.length()-1;
+        while(st<en){
+            while(st<en && !Character.isLetterOrDigit(s.charAt(st))){
+                st++;
+            }
+            while(st<en && !Character.isLetterOrDigit(s.charAt(en))){
+                en--;
+            }
+            if(st<en && Character.toLowerCase(s.charAt(st))!=Character.toLowerCase(s.charAt(en))){
+                return false;
+            }
+            st++;
+            en--;
+        }
+        return true;
+    }
+}
+
+
+/*
+first lets take two pointers st and en now the palindrom is to check each letter from front and back remove spaces and non numeric and alpha 
+so first we intilize them with zeor and s.lenght()-1
+next we put the while loop with condition of st<en
+now the first while loop tells that st<en next 
+!Character.isLetterOrDigit(s.charAt(en)->this tells that at that particular character is there is any non alpha numeric then move out of the loop 
+if there is no such thing increment the st value
+now go to next while loop in this st<en 
+!Character.isLetterOrDigit(s.charAt(en))->this tells the same as above but en should move backwards so en--
+next the if condition where 
+if(st<en && Character.toLowerCase(s.charAt(st))!=Character.toLowerCase(s.charAt(en)))
+-> now which ever point the st and en are there convert that character to the lower case 
+and check the st and en lower case character if they are equal return true else false 
+if false increment st and decrement en and this while loop will continue upto the st<en ...
+
+
+
+
+
+
+*/
