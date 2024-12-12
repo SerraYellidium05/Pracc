@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+// first we take an empty array of size 26 then we traverse through s and t
+//now at first letter of s we increment that particular letter array value by 1
+//now the letter we encounter at t we decrement that particular array value by -1 of that particular letter 
+        int a[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            ++a[s.charAt(i)-'a'];
+            --a[t.charAt(i)-'a'];
+        }
+        for(int i=0;i<a.length;i++){
+            if(a[i]>0){
+                return false;
+            }
+        }
+        return true;
+    }
+}
